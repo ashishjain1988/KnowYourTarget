@@ -1,0 +1,36 @@
+Package: KnowYourTarget
+Type: Package
+Title: Create an HTML Dashboard to know more about effects and drugs targeting a gene using NCI60 and DepMap data
+Version: 0.1.0
+Authors@R: c(
+    person("Ashish", "Jain", role = c("aut", "cre"), email = "ashish.jain2@nih.gov"),
+    person("Frederick National Laboratory For Cancer Research", role = c("cph"))
+    )
+Description: Create an HTML Dashboard to know more about a gene using NCI60 and DepMap data.
+License: GPL
+VignetteBuilder: knitr,rmarkdown
+Depends:
+    R (>= 4.0.0),
+    rmarkdown,
+    rcellminerData,
+    depmap,
+    ggplot2 (>= 2.3.3)
+Imports:
+    dplyr (>= 1.0.2),
+    knitr,
+    i2dash,
+    foreach,
+    doParallel,
+    tidyr,
+    rcellminer,
+    ExperimentHub,
+    plotly,
+    DT,
+    lme4,
+    stringr,
+    AnnotationHub
+URL: https://github.com/ashishjain1988/
+Suggests: jsonlite
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1

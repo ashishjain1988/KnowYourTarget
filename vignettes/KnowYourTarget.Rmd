@@ -1,0 +1,33 @@
+---
+title: "KnowYourTarget: R package to easily create an HTML Dashboard to know more about a gene using NCI60 and DepMap data"
+author: |
+    | Ashish Jain
+    | Frederick National Laboratory For Cancer Research
+    | Frederick, Maryland
+    | 
+date: "`r format(Sys.Date(), '%m/%d/%Y')`"
+output: 
+  rmarkdown::html_document:
+    highlight: pygments
+    toc: true
+    #number_sections: true  ## if you want number sections at each table header
+    #theme: united  # many options for theme, this one is my favorite.
+fig_width: 8 
+fig_height: 5 
+vignette: >
+  %\VignetteIndexEntry{MAFDash}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width=8, fig.height=5
+)
+```
+
