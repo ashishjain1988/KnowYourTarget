@@ -2,7 +2,7 @@
 % Please edit documentation in R/getTopDrugs.R
 \name{plotGeneDrugInteractionInNCI60}
 \alias{plotGeneDrugInteractionInNCI60}
-\title{Function to get correlation between drug activity and gene expression}
+\title{Plot to show correlation between drug activity and gene expression}
 \usage{
 plotGeneDrugInteractionInNCI60(gene = "CHEK1", drug = "tolylquinone")
 }
@@ -12,7 +12,8 @@ plotGeneDrugInteractionInNCI60(gene = "CHEK1", drug = "tolylquinone")
 \item{drug}{Drug name}
 }
 \value{
-The list of tissues in the NCI60 dataset
+The list object containing the plot showing the correlation between
+drug activity and gene expression
 }
 \description{
 This function creates a plot to show the correlation between

@@ -6,7 +6,7 @@
 \usage{
 getGeneEffectsInDepMap(
   genes = NULL,
-  depMapVersion = "EH5358",
+  depMapVersion = "",
   groupBySubtypes = FALSE
 )
 }
@@ -18,7 +18,8 @@ getGeneEffectsInDepMap(
 \item{groupBySubtypes}{Group the cancer cell lines from cancer subtypes, default=FALSE}
 }
 \value{
-No return value, the MAF dashboard html file is created in the given output folder
+A list containing plots for individual genes. For each gene, we have three plots showing
+the DepMap CRISPR-Cas9 data in the form of histogram, boxplot, and combined plot.
 }
 \description{
 This function creates the interactive plot to show the effects of

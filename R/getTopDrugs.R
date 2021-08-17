@@ -103,7 +103,7 @@ getAllTissuesInNCI60<-function(){
   return(sort(unique(sampleData$TissueType)))
 }
 
-#' Function to get correlation between drug activity and gene expression
+#' Plot to show correlation between drug activity and gene expression
 #' @description This function creates a plot to show the correlation between
 #' the drug activity and gene expression
 #' @param gene Gene name
@@ -111,7 +111,8 @@ getAllTissuesInNCI60<-function(){
 #'
 #' @author Ashish Jain
 #' @export
-#' @return The list of tissues in the NCI60 dataset
+#' @return The list object containing the plot showing the correlation between
+#' drug activity and gene expression
 #'
 #' @examples
 
