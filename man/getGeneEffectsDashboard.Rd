@@ -29,6 +29,10 @@ This function creates an HTML file with the plots
 using the NCI60 and DepMap data explaining the effects of the
 input genes and drugs targetting them.
 }
+\examples{
+getGeneEffectsDashboard(gene="CHEK1")
+
+}
 \author{
 Ashish Jain
 }

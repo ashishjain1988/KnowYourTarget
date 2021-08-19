@@ -15,6 +15,8 @@
 #' in the given output folder
 #'
 #' @examples
+#' getGeneEffectsDashboard(gene="CHEK1")
+#'
 #' @importFrom i2dash i2dashboard
 #' @importFrom i2dash datadir
 #' @importFrom i2dash add_page
@@ -54,7 +56,7 @@ getGeneEffectsDashboard<-function(gene=NULL,outputFilePath=getwd(),outputFileNam
   nci60<-plotGeneDrugInteractionInNCI60(gene=gene,drug=topDrug1$drug[1])#"tolylquinone")
   depmapCrispr<-getGeneEffectsInDepMap(genes=gene)
   i2dash::i2dashboard(
-    title = "Know Your Target",
+    title = dashboardTitle,
     author = "",
     interactive = TRUE,
     theme = "yeti")->dashboard
