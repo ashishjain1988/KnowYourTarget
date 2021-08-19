@@ -67,10 +67,12 @@ getTopDrugs<-function(genes=NULL,noOfCores=NULL){
         for(i in c(1:nrow(d1)))
         {
           corTest<-cor.test(g,d1[i,])
-          l<-lm(g~d1[i,])
-          l2<-lme4::lmer(g ~ d + (1 + d|t), data = data.frame(d=d1[i,],g=g,t=sampleData$TissueType))
-          result<-c(paste0(x,":",row.names(d1[i,,drop=FALSE])),x,(corTest$estimate),(corTest$p.value),sigma(l),sigma(l2))
-          names(result)<-c("DrugNSC","drug","Correlation","PValue","lmSigma","lmMixSigma")
+          #l<-lm(g~d1[i,])
+          #l2<-lme4::lmer(g ~ d + (1 + d|t), data = data.frame(d=d1[i,],g=g,t=sampleData$TissueType))
+          #result<-c(paste0(x,":",row.names(d1[i,,drop=FALSE])),x,(corTest$estimate),(corTest$p.value),sigma(l),sigma(l2))
+          #names(result)<-c("DrugNSC","drug","Correlation","PValue","lmSigma","lmMixSigma")
+          result<-c(paste0(x,":",row.names(d1[i,,drop=FALSE])),x,(corTest$estimate),(corTest$p.value))
+          names(result)<-c("DrugNSC","drug","Correlation","PValue")
           drugPValue[[i]]<-result
         }
       }
@@ -115,11 +117,12 @@ getAllTissuesInNCI60<-function(){
 #' drug activity and gene expression
 #'
 #' @examples
+#' g<-plotGeneDrugInteractionInNCI60(gene="CHEK1",drug="tolylquinone")
 
 plotGeneDrugInteractionInNCI60<-function(gene="CHEK1",drug="tolylquinone"){
   #require(rcellminer)
   #require(rcellminerData)
-  g1<-NULL
+  #g1<-NULL
   # Get the types of feature data in a MolData object.
   data("molData")
   geneExpMat <- exprs(molData[["exp"]])
