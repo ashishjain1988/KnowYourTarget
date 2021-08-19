@@ -6,6 +6,7 @@
 \usage{
 getGeneEffectsDashboard(
   gene = NULL,
+  noOfCores = NULL,
   outputFilePath = getwd(),
   outputFileName = "KnowYourTarget.html",
   dashboardTitle = "Know Your Target"
@@ -13,6 +14,8 @@ getGeneEffectsDashboard(
 }
 \arguments{
 \item{gene}{A gene to check the effect}
+
+\item{noOfCores}{No of cores used to run process the NCI60 data}
 
 \item{outputFilePath}{Output path of the dashboard}
 

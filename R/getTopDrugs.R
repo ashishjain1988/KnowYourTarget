@@ -17,7 +17,7 @@
 #' @import rcellminer
 #' @import rcellminerData
 #' @import doParallel
-#' @importFrom foreach foreach
+#' @import foreach
 #' @import ggplot2
 #' @importFrom lme4 lmer
 #' @import dplyr
@@ -26,9 +26,6 @@ getTopDrugs<-function(genes=NULL,noOfCores=NULL){
   #require(rcellminer)
   #require(rcellminerData)
   if (is.null(genes)) {
-    stop("Need to enter a gene or gene list")
-  }
-  if (is.null(noOfCores)) {
     stop("Need to enter a gene or gene list")
   }
 
@@ -43,7 +40,7 @@ getTopDrugs<-function(genes=NULL,noOfCores=NULL){
   drugNames <- drugNames[drugNames != ""]
   #require(foreach)
   #require(doParallel)
-  cores=parallel::detectCores()
+  ncores=parallel::detectCores()
   #setup parallel backend to use many processors
   if(is.null(noOfCores) || noOfCores > ncores)
   {
@@ -85,6 +82,7 @@ getTopDrugs<-function(genes=NULL,noOfCores=NULL){
     f<-f[order(f$FDR),]
     return(f)
   }
+  parallel::stopCluster(cl)
   names(finalCorrelation)<-genesInNCI60Data#row.names(geneExpMat)
   return(finalCorrelation)
 }

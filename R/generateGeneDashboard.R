@@ -7,6 +7,7 @@
 #' input genes and drugs targetting them.
 #' @author Ashish Jain
 #' @param gene A gene to check the effect
+#' @param noOfCores No of cores used to run process the NCI60 data
 #' @param outputFilePath Output path of the dashboard
 #' @param outputFileName File name of the dashboard
 #' @param dashboardTitle Title of the dashboard
@@ -22,20 +23,21 @@
 #' @importFrom i2dash add_page
 #' @importFrom i2dash add_component
 #' @importFrom i2dash assemble
+#' @importFrom i2dash %<>%
 #' @importFrom DT datatable
 #' @import rmarkdown
 
-getGeneEffectsDashboard<-function(gene=NULL,outputFilePath=getwd(),outputFileName="KnowYourTarget.html",dashboardTitle="Know Your Target"){
+getGeneEffectsDashboard<-function(gene=NULL,noOfCores = NULL,outputFilePath=getwd(),outputFileName="KnowYourTarget.html",dashboardTitle="Know Your Target"){
 
   if (is.null(gene)) {
     stop("Need to enter the gene or gene list")
   }
   #require(i2dash)
   #require(plotly)
-  topDrug <- getTopDrugs(genes = gene,noOfCores = 4)
+  topDrug <- getTopDrugs(genes = gene,noOfCores = noOfCores)
   #topDrug1 <- topDrug$CHEK1[order(topDrug$CHEK1$Correlation),]
   topDrug1 <- topDrug[[gene]] %>% dplyr::filter(PValue <= 0.01) %>% arrange(Correlation,FDR)
-  drugTable<- DT::datatable(topDrug1[,c(2,3,4,7)],rownames = FALSE,options = list(pageLength = 8))
+  drugTable<- DT::datatable(topDrug1[,c(2:5)],rownames = FALSE,options = list(pageLength = 8))
   # drugTable <- plot_ly(
   #   type = 'table',
   #   #columnwidth = c(100, 100),
