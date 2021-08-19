@@ -14,8 +14,8 @@
 #' the DepMap CRISPR-Cas9 data in the form of histogram, boxplot, and combined plot.
 #'
 #' @examples
-#' g<-getGeneEffectsInDepMap(genes=c("CHECK1))
-#' g$CHECK1$combined
+#' g<-getGeneEffectsInDepMap(genes=c("CHEK1))
+#' g$CHEK1$combined
 #'
 #' @import depmap
 #' @import ExperimentHub

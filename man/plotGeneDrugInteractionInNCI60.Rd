@@ -19,6 +19,9 @@ drug activity and gene expression
 This function creates a plot to show the correlation between
 the drug activity and gene expression
 }
+\examples{
+g<-plotGeneDrugInteractionInNCI60(gene="CHEK1",drug="tolylquinone")
+}
 \author{
 Ashish Jain
 }
