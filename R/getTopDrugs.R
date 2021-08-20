@@ -19,7 +19,6 @@
 #' @import doParallel
 #' @import foreach
 #' @import ggplot2
-#' @importFrom lme4 lmer
 #' @import dplyr
 
 getTopDrugs<-function(genes=NULL,noOfCores=NULL){

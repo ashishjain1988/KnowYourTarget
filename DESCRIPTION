@@ -26,7 +26,6 @@ Imports:
     ExperimentHub,
     plotly,
     DT,
-    lme4,
     stringr,
     AnnotationHub
 URL: https://github.com/ashishjain1988/KnowYourTarget/
