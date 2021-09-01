@@ -28,7 +28,7 @@ You need R version above 4.0.0 to run this application. Other dependencies are:
 * Install Dependencies
 * `install.packages(c("dplyr","knitr","ggplot2","tidyr","foreach","doParallel","plotly","DT","stringr","rmarkdown","i2dash"))`
 * `install.packages("BiocManager")`
-* `BiocManager::install(c("rcellminerData","rcellminer","depmap",,"ExperimentHub","AnnotationHub"))`
+* `BiocManager::install(c("rcellminerData","rcellminer","depmap","ExperimentHub","AnnotationHub"))`
 * Now install the `devtools` package
 * `install.packages("devtools")`
 * `library(devtools)`
