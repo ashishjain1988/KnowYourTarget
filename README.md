@@ -35,4 +35,8 @@ You need R version above 4.0.0 to run this application. Other dependencies are:
 * Run command `install_github("ashishjain1988/KnowYourTarget")`
 
 **More about the package**
+ library(KnowYourTarget)
+
+##Create a dashboard for a gene using NCI60 and DepMap data
+getGeneEffectsDashboard(gene="CHEK1",outputFilePath=".",outputFileName="CHEK1-KnowYourTarget.html")
 
